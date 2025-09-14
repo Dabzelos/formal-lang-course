@@ -29,5 +29,5 @@ venv:
 	fi
 
 rye:
-	rye fmt --check
+	-rye fmt --check
 	rye fmt

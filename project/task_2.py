@@ -1,10 +1,10 @@
+from networkx import MultiDiGraph
 from pyformlang.finite_automaton import (
     DeterministicFiniteAutomaton,
     NondeterministicFiniteAutomaton,
     State,
 )
 from pyformlang.regular_expression import Regex
-from networkx import MultiDiGraph
 
 
 def regex_to_dfa(regex: str) -> DeterministicFiniteAutomaton:
@@ -12,10 +12,10 @@ def regex_to_dfa(regex: str) -> DeterministicFiniteAutomaton:
 
     return dfa
 
+
 def graph_to_nfa(
-    graph: MultiDiGraph,
-    start_states: set[int],
-    final_states: set[int]) -> NondeterministicFiniteAutomaton:
+    graph: MultiDiGraph, start_states: set[int], final_states: set[int]
+) -> NondeterministicFiniteAutomaton:
     nfa = NondeterministicFiniteAutomaton.from_networkx(graph)
 
     start_nodes = start_states if start_states else set(graph.nodes)
